@@ -26,6 +26,6 @@ CoreTFDescObj *obj1=[CoreTFDescObj tfDescObj:_tf1 bottomInset:0];
 
 
 #看看效果图吧
-![image](./1.png)
+![image](./CoreTextFieldManager/1.png)
 
 
