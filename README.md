@@ -15,12 +15,12 @@
     本工具是专门解决这个问题的，你要做的就是，继承我的这个类，传一个数组给我即可。
     bottomInset表示这个文本输入框是否需要向下多留一点空白，一般是文本框下面有提示类文字或者提交类按钮可以设置此值。
 #使用示例
-CoreTFDescObj *obj1=[CoreTFDescObj tfDescObj:_tf1 bottomInset:0];
+
+    CoreTFDescObj *obj1=[CoreTFDescObj tfDescObj:_tf1 bottomInset:0];
     CoreTFDescObj *obj2=[CoreTFDescObj tfDescObj:_tf2 bottomInset:0];
     CoreTFDescObj *obj3=[CoreTFDescObj tfDescObj:_tf3 bottomInset:0];
     CoreTFDescObj *obj4=[CoreTFDescObj tfDescObj:_tf4 bottomInset:32];
     CoreTFDescObj *obj5=[CoreTFDescObj tfDescObj:_tf5 bottomInset:0];
-    
     
     self.descObjs=@[obj1,obj2,obj3,obj4,obj5];
 
