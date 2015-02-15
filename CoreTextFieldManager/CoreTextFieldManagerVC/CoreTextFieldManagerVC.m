@@ -73,6 +73,9 @@
             //设置键盘工具条
             tf.inputAccessoryView=self.keyBoardToolBarView;
             
+            //返回键样式
+            tf.returnKeyType=UIReturnKeyDefault;
+            
             //tf控件直接存入
             CGRect unifyFrame = [self.view.window convertRect:tf.frame fromView:tf.superview];
             
@@ -113,7 +116,6 @@
     //键盘高度
     self.keyBoardHeight=[userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue].size.height;
     [self adjustFrame];
-    NSLog(@"键盘弹出通知");
 }
 
 -(void)keyBoardWillHide:(NSNotification *)noti{
@@ -123,6 +125,11 @@
         [UIView setAnimationCurve:_keyBoardCurve];
         self.view.transform=CGAffineTransformIdentity;
     }];
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [self.currentTFObj.tf resignFirstResponder];
+    return YES;
 }
 
 
