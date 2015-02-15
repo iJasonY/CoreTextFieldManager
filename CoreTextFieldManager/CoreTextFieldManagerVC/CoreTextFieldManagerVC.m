@@ -59,28 +59,16 @@
 -(void)setDescObjs:(NSArray *)descObjs{
     
     __block NSArray *arr=descObjs;
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        //遍历所有文本框
-        [arr enumerateObjectsUsingBlock:^(CoreTFDescObj *tfDescObj, NSUInteger idx, BOOL *stop) {
-            
-            //取出文本框
-            UITextField *tf=tfDescObj.tf;
-            
-            //设置代理
-            tf.delegate=self;
-            
-            //设置键盘工具条
-            tf.inputAccessoryView=self.keyBoardToolBarView;
-        }];
-    });
-  
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5f * NSEC_PER_SEC)), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5f * NSEC_PER_SEC)),dispatch_get_main_queue(), ^{
         //遍历所有文本框
         [arr enumerateObjectsUsingBlock:^(CoreTFDescObj *tfDescObj, NSUInteger idx, BOOL *stop) {
 
             //取出文本框
             UITextField *tf=tfDescObj.tf;
+            
+            //设置代理
+            tf.delegate=self;
             
             //设置键盘工具条
             tf.inputAccessoryView=self.keyBoardToolBarView;
@@ -243,6 +231,9 @@
 }
 
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.currentTFObj.tf resignFirstResponder];
+}
 
 
 @end

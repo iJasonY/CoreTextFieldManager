@@ -35,7 +35,9 @@
     
     [self setupTF];
     
-    [self.tf1 becomeFirstResponder];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.6f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.tf1 becomeFirstResponder];
+    });
 
 }
 

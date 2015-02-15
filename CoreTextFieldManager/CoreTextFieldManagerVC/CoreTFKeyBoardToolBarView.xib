@@ -88,7 +88,7 @@
                 <outlet property="nextBtn" destination="qDV-Fg-gDK" id="UV9-Y9-IEn"/>
                 <outlet property="preBtn" destination="dNU-MM-xGA" id="hYT-Hl-cUB"/>
             </connections>
-            <point key="canvasLocation" x="514" y="445"/>
+            <point key="canvasLocation" x="551" y="425"/>
         </view>
     </objects>
 </document>
